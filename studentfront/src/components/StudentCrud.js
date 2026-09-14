@@ -14,7 +14,7 @@ function StudentCrud() {
 
   async function fetchStudents() {
     try {
-      const response = await axios.get("https://localhost:7224/api/controller/GetStudent");
+      const response = await axios.get("/api/controller/GetStudent");
       setStudents(response.data);
     } catch (error) {
       console.error("Erreur lors du chargement :", error);
@@ -28,14 +28,14 @@ function StudentCrud() {
     try {
       if (id === "") {
         // ADD
-        await axios.post("https://localhost:7224/api/controller/AddStudent", {
+        await axios.post("/api/controller/AddStudent", {
           name,
           course,
         });
         alert("Student added successfully");
       } else {
         // UPDATE
-        await axios.put(`https://localhost:7224/api/controller/UpdateStudent/${id}`, {
+        await axios.put(`/api/controller/UpdateStudent/${id}`, {
           id,
           name,
           course,
@@ -61,7 +61,7 @@ function StudentCrud() {
     if (!window.confirm("Are you sure you want to delete this student?")) return;
 
     try {
-      await axios.delete(`https://localhost:7224/api/controller/DeleteStudent/${studentId}`);
+      await axios.delete(`/api/controller/DeleteStudent/${studentId}`);
       alert("Student deleted successfully");
       fetchStudents();
     } catch (error) {
