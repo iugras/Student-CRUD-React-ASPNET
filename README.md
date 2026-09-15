@@ -33,7 +33,7 @@ Docker & docker‑compose
 Nginx reverse proxy
 
 📂 Project Structure
-Код
+
 Student-CRUD-React-ASPNET/
 │
 ├── StudentAPI/              # ASP.NET Core backend
@@ -68,7 +68,7 @@ This happens every time SQL Server starts with a fresh volume.
 🔌 Connection String
 The API receives its connection string from environment variables in docker-compose.yml:
 
-Код
+
 Server=sqlserver,1433;
 Database=StudentDB;
 User Id=sa;
@@ -76,7 +76,7 @@ Password=YourStrong@Password123;
 TrustServerCertificate=True;
 ASP.NET Core automatically maps:
 
-Код
+
 ConnectionStrings__StudentDbContext
 to:
 
